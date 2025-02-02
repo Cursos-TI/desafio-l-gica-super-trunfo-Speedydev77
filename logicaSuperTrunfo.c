@@ -21,6 +21,7 @@ int main() {
     Para fazer comparações entre valores das variáveis;
     Estruturas de decisão: if, if-else; 
     */
+
     char estado_1[50] = "Brasil";
     char codigo_1[5] = "A01";
     char cidade_1[50] = "Brasilia";
@@ -28,6 +29,8 @@ int main() {
     float area_1 = 5760.78;
     float PIB_1 = 265847334.00;
     int pontos_turisticos_1 = 32;
+    float densidade_populacional_1 = populacao_1 / area_1; //A densidade populacional será calculada automaticamente pelo quociente entre a população e a área da cidade
+    float PIB_per_Capita_1 = PIB_1 / populacao_1; //O pib per capita será calculado automaticamente pelo quociente entre a população e o PIB da cidade
     
     char estado_2[50] = "Portugal";
     char codigo_2[5] = "E01";
@@ -36,6 +39,8 @@ int main() {
     float area_2 = 100.05;
     float PIB_2 = 522000000000.00; 
     int pontos_turisticos_2 = 55;
+    float densidade_populacional_2 = populacao_2 / area_2; //A densidade populacional será calculada automaticamente pelo quociente entre a população e a área da cidade
+    float PIB_per_Capita_2 = PIB_2 / populacao_2; //O pib per capita será calculado automaticamente pelo quociente entre a população e o PIB da cidade
 
     
     // Cadastro das Cartas:
@@ -132,6 +137,18 @@ int main() {
         printf("A quatidade de pontos turísticos da segunda cidade é maior\n");
     }
 
+    if (densidade_populacional_1 < densidade_populacional_2) {
+        printf("A densidade populacional da primeira cidade é menor\n");
+    } else {
+        printf("A densidade populacional da segunda cidade é menor\n");
+    }
+
+    if (PIB_per_Capita_1 > PIB_per_Capita_2) {
+        printf("O PIB per Capita da primeira cidade é maior\n");
+    } else {
+        printf("O PIB per Capita da segunda cidade é maior\n");
+    }
+
     // Exibição dos Resultados:
     // Após realizar as comparações, exiba os resultados para o usuário.
     // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
@@ -139,7 +156,9 @@ int main() {
     // Exemplo:
     // printf("A cidade vencedora é: %s\n", cidadeVencedora);
 
-    printf("\nAs cidades empataram: %s 2 x 2 %s\n", cidade_1, cidade_2);
+    printf("\n===== Comparação das cartas =====\n");
+
+    printf("As cidades empataram: %s 3 x 3 %s\n", cidade_1, cidade_2);
 
     return 0;
 }
