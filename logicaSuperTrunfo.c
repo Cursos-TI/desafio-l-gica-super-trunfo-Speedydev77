@@ -21,6 +21,9 @@ int main() {
     Para fazer comparações entre valores das variáveis;
     Estruturas de decisão: if, if-else; 
     */
+    
+    int escolha_jogador, escolha_console, escolha_jogador1, escolha_console1;
+
 
     char estado_1[50] = "Brasil";
     char codigo_1[5] = "A01";
@@ -31,7 +34,9 @@ int main() {
     int pontos_turisticos_1 = 32;
     float densidade_populacional_1 = populacao_1 / area_1; //A densidade populacional será calculada automaticamente pelo quociente entre a população e a área da cidade
     float PIB_per_Capita_1 = PIB_1 / populacao_1; //O pib per capita será calculado automaticamente pelo quociente entre a população e o PIB da cidade
-    
+    float Super_Poder_1 = populacao_1 + area_1 + PIB_1 + pontos_turisticos_1 + densidade_populacional_1 + PIB_per_Capita_1; // O super poder será calculado automaticamente pela soma de todas as propriedades de uma cidade
+
+
     char estado_2[50] = "Portugal";
     char codigo_2[5] = "E01";
     char cidade_2[50] = "Lisboa";
@@ -41,6 +46,7 @@ int main() {
     int pontos_turisticos_2 = 55;
     float densidade_populacional_2 = populacao_2 / area_2; //A densidade populacional será calculada automaticamente pelo quociente entre a população e a área da cidade
     float PIB_per_Capita_2 = PIB_2 / populacao_2; //O pib per capita será calculado automaticamente pelo quociente entre a população e o PIB da cidade
+    float Super_Poder_2 = populacao_2 + area_2 + PIB_2 + pontos_turisticos_2 + densidade_populacional_2 + PIB_per_Capita_2;
 
     
     // Cadastro das Cartas:
@@ -57,13 +63,13 @@ int main() {
     printf("\n========= Insira as informações da primeira cidade =========\n");
 
     printf("Qual o primeiro estado?\n");
-    scanf("%s", &estado_1);
+    scanf("%s", estado_1);
 
     printf("Qual o código do primeiro estado?\n");
-    scanf("%s", &codigo_1);
+    scanf("%s", codigo_1);
 
     printf("Qual o nome da primeira cidade?\n");
-    scanf("%s", &cidade_1);
+    scanf("%s", cidade_1);
 
     printf("Qual o número da população da primeira cidade?\n");
     scanf("%d", &populacao_1);
@@ -82,13 +88,13 @@ int main() {
     printf("\n========= Insira as informações da segunda cidade =========\n");
 
     printf("Qual o segundo estado?\n");
-    scanf("%s", &estado_2);
+    scanf("%s", estado_2);
 
     printf("Qual o código do segundo estado?\n");
-    scanf("%s", &codigo_2);
+    scanf("%s", codigo_2);
 
     printf("Qual o nome da segunda cidade?\n");
-    scanf("%s", &cidade_2);
+    scanf("%s", cidade_2);
 
     printf("Qual o número da população da segunda cidade?\n");
     scanf("%d", &populacao_2);
@@ -113,41 +119,196 @@ int main() {
     //     printf("Cidade 2 tem maior população.\n");
     // }
 
-    if (populacao_1 > populacao_2) {
-        printf("A população da primeira cidade é maior\n");
-    } else {
-        printf("A população da segunda cidade é maior\n");
+    printf("\n===== Menu de Cartas Super Trunfo =====\n");
+    printf("\nEscolha o número da cidade:\n");
+    printf("Cidade 1 - Brasília\n");
+    printf("Cidade 2 - Lisboa\n");
+    scanf("%d", &escolha_jogador);
+
+
+
+    switch (escolha_jogador) {
+        case 1:
+            printf("Cidade escolhida: Brasília\n");
+            printf("Escolha o número do atributo:\n");
+            printf("1. População\n");
+            printf("2. Área\n");
+            printf("3. PIB\n");
+            printf("4. Pontos turisticos\n");
+            printf("5. Densidade populacional\n");
+            printf("6. PIB per Capita\n");
+            printf("7. Super Poder\n");
+            scanf("%d", &escolha_jogador1);
+            switch (escolha_jogador1) {
+                case 1:
+                    printf("Você escolheu o atributo: População - Brasília\n");
+                if(populacao_1 > populacao_2){
+                    printf("A população de Brasília é maior!\n");
+                    printf("A cidade vencedora: Brasília!\n");
+                } else {
+                    printf("A população de Brasília é menor!\n");
+                    printf("A cidade vencedora: Lisboa!\n");
+                }
+                    break;
+                case 2:
+                    printf("Você escolheu o atributo: Área - Brasília\n");
+                if(area_1 > area_2){
+                    printf("A área de Brasília é maior!\n");
+                    printf("A cidade vencedora: Brasília!\n");
+                } else {
+                    printf("A área de Brasília é menor!\n");
+                    printf("A cidade vencedora: Lisboa!\n");
+                }
+                    break;
+                case 3:
+                    printf("Você escolheu o atributo: PIB - Brasília\n");
+                if(PIB_1 > PIB_2){
+                    printf("O PIB de Brasília é maior!\n");
+                    printf("A cidade vencedora: Brasília!\n");
+                } else {
+                    printf("O PIB de Brasília é menor!\n");
+                    printf("A cidade vencedora: Lisboa!\n");
+                }
+                    break;
+                case 4:
+                    printf("Você escolheu o atributo: Pontos turisticos - Brasília\n");
+                if(pontos_turisticos_1 > pontos_turisticos_2){
+                    printf("O número de pontos turísticos de Brasília é maior!\n");
+                    printf("A cidade vencedora: Brasília!\n");
+                } else {
+                    printf("O número de pontos turísticos de Brasília é menor!\n");
+                    printf("A cidade vencedora: Lisboa!\n");
+                }
+                    break;
+                case 5:
+                    printf("Você escolheu o atributo: Densidade populacional - Brasília\n");
+                if(densidade_populacional_1 > densidade_populacional_2){
+                    printf("A densidade populacional de Brasília é maior!\n");
+                    printf("A cidade vencedora: Brasília!\n");
+                } else {
+                    printf("A densidade populacional de Brasília é menor!\n");
+                    printf("A cidade vencedora: Lisboa!\n");
+                }
+                    break;
+                case 6:
+                    printf("Você escolheu o atributo: PIB per Capita - Brasília\n");
+                if(PIB_per_Capita_1 > PIB_per_Capita_2){
+                    printf("O PIB per Capita de Brasília é maior!\n");
+                    printf("A cidade vencedora: Brasília!\n");
+                } else {
+                    printf("O PIB per Capita de Brasília é menor!\n");
+                    printf("A cidade vencedora: Lisboa!\n");
+                }
+                    break;
+                case 7:
+                    printf("Você escolheu o atributo: Super Poder - Brasília\n");
+                if(Super_Poder_1 > Super_Poder_2){
+                    printf("O atributo Super Poder de Brasília é maior!\n");
+                    printf("A cidade vencedora: Brasília!\n");
+                } else {
+                    printf("O atributo Super Poder de Brasília é menor!\n");
+                    printf("A cidade vencedora: Lisboa!\n");
+                }
+                    break;
+                default:
+                    printf("Opção inválida!\n");
+                    break;
+            }
+            break;
+
+        case 2:
+            printf("Cidade escolhida: Lisboa\n");
+            printf("Escolha o número do atributo:\n");
+            printf("1. População\n");
+            printf("2. Área\n");
+            printf("3. PIB\n");
+            printf("4. Pontos turisticos\n");
+            printf("5. Densidade populacional\n");
+            printf("6. PIB per Capita\n");
+            printf("7. Super Poder\n");
+            scanf("%d", &escolha_jogador1);
+            switch (escolha_jogador1) {
+                case 1:
+                    printf("Você escolheu o atributo: População - Lisboa\n");
+                if(populacao_2 > populacao_1){
+                    printf("A população de Lisboa é maior!\n");
+                    printf("A cidade vencedora: Lisboa!\n");
+                } else {
+                    printf("A população de Lisboa é menor!\n");
+                    printf("A cidade vencedora: Brasília!\n");
+                }
+                    break;
+                case 2:
+                    printf("Você escolheu o atributo: Área - Lisboa\n");
+                if(area_2 > area_1){
+                    printf("A área de Lisboa é maior!\n");
+                    printf("A cidade vencedora: Lisboa!\n");
+                } else {
+                    printf("A área de Lisboa é menor!\n");
+                    printf("A cidade vencedora: Brasília!\n");
+                }
+                    break;
+                case 3:
+                    printf("Você escolheu o atributo: PIB - Lisboa\n");
+                if(PIB_2 > PIB_1){
+                    printf("O PIB de Lisboa é maior!\n");
+                    printf("A cidade vencedora: Lisboa!\n");
+                } else {
+                    printf("O PIB de Lisboa é menor!\n");
+                    printf("A cidade vencedora: Brasília!\n");
+                }
+                    break;
+                case 4:
+                    printf("Você escolheu o atributo: Pontos turisticos - Lisboa\n");
+                if(pontos_turisticos_2 > pontos_turisticos_1){
+                    printf("O número de pontos turísticos de Lisboa é maior!\n");
+                    printf("A cidade vencedora: Lisboa!\n");
+                } else {
+                    printf("O número de pontos turísticos de Lisboa é menor!\n");
+                    printf("A cidade vencedora: Brasília!\n");
+                }
+                    break;
+                case 5:
+                    printf("Você escolheu o atributo: Densidade populacional - Lisboa\n");
+                if(densidade_populacional_2 > densidade_populacional_1){
+                    printf("A densidade populacional de Lisboa é maior!\n");
+                    printf("A cidade vencedora: Lisboa!\n");
+                } else {
+                    printf("A densidade populacional de Lisboa é menor!\n");
+                    printf("A cidade vencedora: Brasília!\n");
+                }
+                    break;
+                case 6:
+                    printf("Você escolheu o atributo: PIB per Capita - Lisboa\n");
+                if(PIB_per_Capita_2 > PIB_per_Capita_1){
+                    printf("O PIB per capita de Lisboa é maior!\n");
+                    printf("A cidade vencedora: Lisboa!\n");
+                } else {
+                    printf("O PIB per capita de Lisboa é menor!\n");
+                    printf("A cidade vencedora: Brasília!\n");
+                }
+                    break;
+                case 7:
+                    printf("Você escolheu o atributo: Super Poder - Lisboa\n");
+                if(Super_Poder_2 > Super_Poder_1){
+                    printf("O atributo Super Poder de Lisboa é maior!\n");
+                    printf("A cidade vencedora: Lisboa!\n");
+                } else {
+                    printf("O atributo Super Poder de Lisboa é menor!\n");
+                    printf("A cidade vencedora: Brasília!\n");
+                }
+                    break;
+                default:
+                    printf("Opção inválida!\n");
+                    break;
+            }
+            break;
+
+        default:
+            printf("Opção inválida!\n");
+            break;
     }
 
-    if (area_1 > area_2) {
-        printf("A área em km² da primeira cidade é maior\n");
-    } else {
-        printf("A área em km² da segunda cidade é maior\n");
-    }
-
-    if (PIB_1 > PIB_2) {
-        printf("O PIB da primeira cidade é maior\n");
-    } else {
-        printf("O PIB da segunda cidade é maior\n");
-    }
-
-    if (pontos_turisticos_1 > pontos_turisticos_2) {
-        printf("A quatidade de pontos turísticos da primeira cidade é maior\n");
-    } else {
-        printf("A quatidade de pontos turísticos da segunda cidade é maior\n");
-    }
-
-    if (densidade_populacional_1 < densidade_populacional_2) {
-        printf("A densidade populacional da primeira cidade é menor\n");
-    } else {
-        printf("A densidade populacional da segunda cidade é menor\n");
-    }
-
-    if (PIB_per_Capita_1 > PIB_per_Capita_2) {
-        printf("O PIB per Capita da primeira cidade é maior\n");
-    } else {
-        printf("O PIB per Capita da segunda cidade é maior\n");
-    }
 
     // Exibição dos Resultados:
     // Após realizar as comparações, exiba os resultados para o usuário.
@@ -156,9 +317,6 @@ int main() {
     // Exemplo:
     // printf("A cidade vencedora é: %s\n", cidadeVencedora);
 
-    printf("\n===== Comparação das cartas =====\n");
-
-    printf("As cidades empataram: %s 3 x 3 %s\n", cidade_1, cidade_2);
 
     return 0;
 }
