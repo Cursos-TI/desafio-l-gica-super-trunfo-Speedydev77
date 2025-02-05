@@ -19,10 +19,10 @@ int main() {
 
     Operadores Relacionais: a >= b, a <= b, a == b, a!= b; 
     Para fazer comparações entre valores das variáveis;
-    Estruturas de decisão: if, if-else; 
+    Estruturas de decisão: if, if-else; switch
     */
     
-    int escolha_jogador, escolha_console, escolha_jogador1, escolha_console1;
+    int escolha_jogador, escolha_console, escolha_jogador1, escolha_console1; //Variáveis para inserir o valor do jogador
 
 
     char estado_1[50] = "Brasil";
@@ -119,12 +119,37 @@ int main() {
     //     printf("Cidade 2 tem maior população.\n");
     // }
 
+    /*
+    ==== Explicação do jogo =====
+
+    O jogo começa com a escolha de duas opções de cidades:
+    Cidade 1 = Brasília
+    Cidade 2 = Lisboa
+    Para cada cidade escolhida é possível escolher um atributo para comparação
+    O atributo escolhido pode ser: população, área, PIB, pontos turísticos, densidade populacional, PIB per capita e o super poder
+    O jogo irá fazer a comparação do atributo entre duas cidades
+    O jogo exibirá qual é o atributo maior ou menor e qual a cidade que venceu
+    */
+
     printf("\n===== Menu de Cartas Super Trunfo =====\n");
     printf("\nEscolha o número da cidade:\n");
     printf("Cidade 1 - Brasília\n");
     printf("Cidade 2 - Lisboa\n");
     scanf("%d", &escolha_jogador);
 
+    /*
+    As estrutura de decisões são: if, else, if-else, switch
+    De acordo com o formato da sintaxe, pode formar uma estrutura de decisão encadeada ou aninhada
+    Para a comparação, pode-se combinar:
+    Operadores lógicos como: && = AND, || = OR, ! = Invertido
+    Operadores Relacionais: a >= b, a <= b, a == b, a != b;
+
+    Estrutura de decisão switch:
+    A estrutura if e else pode ser substituida ou incrementada a sintaxe do switch
+    A estrutura switch é iniciada com um valor que posteriormente será o valor do caze escolhido 
+    O caze escolhido inicia a execução de um bloco de código
+    Desta forma, pode-se criar um bloco de multiplas escolhas com um switch dentro de um caze, incrementar o if, else, if-else
+    */
 
 
     switch (escolha_jogador) {
@@ -182,11 +207,11 @@ int main() {
                     break;
                 case 5:
                     printf("Você escolheu o atributo: Densidade populacional - Brasília\n");
-                if(densidade_populacional_1 > densidade_populacional_2){
-                    printf("A densidade populacional de Brasília é maior!\n");
+                if(densidade_populacional_1 < densidade_populacional_2){
+                    printf("A densidade populacional de Brasília é menor!\n");
                     printf("A cidade vencedora: Brasília!\n");
                 } else {
-                    printf("A densidade populacional de Brasília é menor!\n");
+                    printf("A densidade populacional de Brasília é maior!\n");
                     printf("A cidade vencedora: Lisboa!\n");
                 }
                     break;
@@ -270,11 +295,11 @@ int main() {
                     break;
                 case 5:
                     printf("Você escolheu o atributo: Densidade populacional - Lisboa\n");
-                if(densidade_populacional_2 > densidade_populacional_1){
-                    printf("A densidade populacional de Lisboa é maior!\n");
+                if(densidade_populacional_2 < densidade_populacional_1){
+                    printf("A densidade populacional de Lisboa é menor!\n");
                     printf("A cidade vencedora: Lisboa!\n");
                 } else {
-                    printf("A densidade populacional de Lisboa é menor!\n");
+                    printf("A densidade populacional de Lisboa é maior!\n");
                     printf("A cidade vencedora: Brasília!\n");
                 }
                     break;
