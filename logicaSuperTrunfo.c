@@ -276,7 +276,7 @@ int main() {
             case 'e':
                 printf("===== Densidade Populacional - lisboa =====\n");
                 (lisboa == 'E' || 'e') && (densidade_populacional_2 < densidade_populacional_1) ? printf("A densidade populacional de lisboa é menor!\n") : printf("A densidade populacional de lisboa é maior!\n");
-                pontos_brasilia++;
+                pontos_lisboa++;
                 break;
             case 'F':
             case 'f':
@@ -329,7 +329,7 @@ int main() {
             case 'e':
                 printf("===== Densidade Populacional - lisboa =====\n");
                 (lisboa_1 == 'E' || 'e') && (densidade_populacional_2 < densidade_populacional_1) ? printf("A densidade populacional de lisboa é menor!\n") : printf("A densidade populacional de lisboa é maior!\n");
-                pontos_brasilia++;
+                pontos_lisboa++;
                 break;
             case 'F':
             case 'f':
